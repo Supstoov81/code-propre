@@ -1,4 +1,4 @@
-package ex5;
+package fr.digi.ex5;
 
 public class Item {
 

@@ -1,4 +1,4 @@
-package ex2;
+package fr.digi.ex2;
 
 /** Représente un compte bancaire de type compte courante (type=CC) ou livret A (type=LA)
  * @author DIGINAMIC
@@ -55,15 +55,10 @@ public class CompteBancaire {
 	 * @param montant
 	 */
 	public void debiterMontant(double montant){
-		if (type.equals("CC")){
-			if (this.solde - montant > decouvert){
-				this.solde = solde - montant;
-			}	
-		}
-		else if (type.equals("LA")){
-			if (this.solde - montant > 0){
-				this.solde = solde - montant;
-			}	
+		if ((type.equals("CC") && this.solde - montant > decouvert) ||
+				(type.equals("LA") && this.solde - montant > 0)) {
+			// Débite le montant du solde
+			this.solde = solde - montant;
 		}
 	}
 	
